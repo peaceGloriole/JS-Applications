@@ -1,3 +1,2 @@
-function loadRepos() {
-   console.log("TODO...");
+async function loadRepos() {
 }
