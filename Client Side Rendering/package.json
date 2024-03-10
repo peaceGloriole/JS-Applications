@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "lit-html": "^3.1.2",
+    "mocha": "^10.3.0"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.42.1"
+  }
+}
