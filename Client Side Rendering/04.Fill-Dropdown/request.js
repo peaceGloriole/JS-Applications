@@ -18,7 +18,7 @@ async function request(method, url, data) {
     const result = await response.json();
     return result;
   } catch (error) {
-    alert(error.message);
+    throw error;
   }
 }
 
@@ -26,6 +26,12 @@ async function post(url, data) {
   return await request(`POST`, url, data);
 }
 
+async function get(url) {
+  const result = await request('GET', url);
+  return Object.values(result);
+}
+
 export {
-  post
+  post,
+  get
 }

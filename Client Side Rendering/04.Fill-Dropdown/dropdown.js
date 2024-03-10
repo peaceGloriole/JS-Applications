@@ -1,5 +1,5 @@
 import { html, render } from '../node_modules/lit-html/lit-html.js';
-import { post } from './request.js';
+import { post, get } from './request.js';
 import { url } from './baseUrlInfo.js';
 
 const inputButton = document.querySelector(`input[type="submit"]`);
@@ -27,12 +27,17 @@ async function onStart() {
 async function onSubmit(e) {
   e.preventDefault();
 
-  try {
+  try { 
+    // Make the POST request to add a new item
     const result = await post(url, { text: inputField });
 
-    render(template(result), selectMenu);
-    debugger
+    // Make a GET request to fetch the updated data
+    const newData = await get(url);
+
+    // Render the template with the updated data
+    render(template(newData), selectMenu);
+
   } catch (error) {
-    alert(error.message);
+    alert(`Error in onSubmit: ${error.message}`);
   }
 }
