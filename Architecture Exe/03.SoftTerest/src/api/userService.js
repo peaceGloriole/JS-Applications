@@ -5,7 +5,7 @@ const endPoints = {
 }
 
 async function register(data) {
-  return await post(endPoints, data);
+  return await post(endPoints.register , data);
 }
 
 export {

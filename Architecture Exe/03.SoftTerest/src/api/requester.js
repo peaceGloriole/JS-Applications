@@ -1,9 +1,9 @@
 import { getUser, removeUser } from '../utils/userUtils.js';
 
 const BASE_URL = `http://localhost:3030/`;
-
+  
 async function requester(method, url, data) {
-  const url = BASE_URL + url;
+  const url = BASE_URL + url; // double url ?
   const userData = getUser();
 
   const options = {
@@ -21,7 +21,7 @@ async function requester(method, url, data) {
   }
 
   try {
-    const response = await fetch(url, options);
+    const response = await fetch(mainUrl, options);
     if(!response.ok) {
       if(response.status === 403) {
         removeUser();
