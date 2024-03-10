@@ -21,6 +21,5 @@ document.querySelector('button').addEventListener('click', () => {
   const filteredTowns = towns.filter(town => town.toLowerCase().includes(searchText));
   renderTowns(filteredTowns);
 
-  // Display the search result count
   resultDiv.textContent = `${filteredTowns.length} result(s) found`;
 });
