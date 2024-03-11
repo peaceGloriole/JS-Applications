@@ -1,4 +1,4 @@
-import { url } from './baseUrlInfo.js';
+import { url } from './baseUrl.js';
 
 async function request(method, url, data) {
   const mainUrl = url;
