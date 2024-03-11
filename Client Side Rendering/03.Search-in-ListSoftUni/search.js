@@ -7,7 +7,8 @@ const townsRoot = document.getElementById(`towns`);
 const resultRoot = document.getElementById(`result`);
 const inputRef = document.getElementById(`searchText`);
 
-update();
+update(null);
+
 function update(match) {
   render(ulTemplate(towns, match), townsRoot);
 }
