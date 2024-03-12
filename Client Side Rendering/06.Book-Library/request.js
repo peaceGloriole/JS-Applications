@@ -1,34 +1,37 @@
-import { getUrl } from './urlStorage.js';
-
 async function request(method, url, data) {
-  const urlInfo = url;
+  const option = {
+    method
+  }
 
-  let options = {
-    method,
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  };
-
-  if (data) {
-    options.body = JSON.stringify(data);
+  if(data) {
+    option[`headers`] = { 'Content-Type': 'application/json' };
+    option[`body`] = JSON.stringify(data);
   }
 
   try {
-    const response = await fetch(urlInfo, options);
+    const response = await fetch(url, option);
     const result = await response.json();
     return result;
   } catch (error) {
-    throw error;
+    alert(error.message);
   }
 }
 
 async function get(url) {
-  const result = await request(`GET`, url);
-  return result;
+  return request(`GET`, url);
 }
 
-export {
-  get
+async function post(url, data) {
+  return request(`POST`, url, data);
 }
 
+async function update(url, id, data) {
+  const updatedUrl = `${url}/${id}`;
+  return request(`PUT`, updatedUrl, data);
+}
+
+export const dataApi = {
+  get,
+  post,
+  update
+}
