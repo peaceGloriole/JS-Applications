@@ -10,9 +10,8 @@ async function postNewBook(data) {
   return await dataApi.post(url, data);
 }
 
-async function updateBook(id, data) {
-  const updatedUrl = `${url}/${id}`;
-  return await dataApi.update(updatedUrl, data);
+async function updateBook(data) {
+  return await dataApi.update(url, data);
 }
 
 export const dataService = {

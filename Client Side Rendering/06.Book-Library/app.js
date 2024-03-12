@@ -47,7 +47,7 @@ const addFormTemplate = () => html`
 
 const editFormTemplate = (book) => html`
   <form @submit=${onEditSubmit} id="edit-form">
-    <input type="hidden" name="id" value="${book.id}">
+    <input type="hidden" name="_id" value="${book._id}">
     <h3>Edit book</h3>
     <label>TITLE</label>
     <input type="text" name="title" placeholder="Title..." value="${book.title}">
@@ -107,11 +107,6 @@ async function onEditSubmit(e) {
     return alert('All fields are required!');
   }
 
-  if (!currentEditBook) {
-    alert('Error: No book selected for editing');
-    return;
-  }
-
   const data = {
     _id: currentEditBook._id,
     title,
@@ -127,6 +122,7 @@ async function onEditSubmit(e) {
   } catch (error) {
     alert(error.message);
   }
+  debugger
 }
 
 render(onLoadtemplate(), bodyEl);
