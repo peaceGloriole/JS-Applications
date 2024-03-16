@@ -1,7 +1,15 @@
+import { userHelper } from './userHelper.js';
+
 async function requester(method, url, data) {
   let options = {
     method,
     headers: {}
+  }
+
+  const accessToken = userHelper.getUserToken();
+
+  if (accessToken) {
+    options.headers[`X-Authorization`] = accessToken;
   }
 
   if (data) {
@@ -33,15 +41,15 @@ async function get(url) {
 }
 
 async function post(url, data) {
-  return  requester(`POST`, url, data);
+  return requester(`POST`, url, data);
 }
 
 async function put(url, data) {
-  return  requester(`PUT`, url, data);
+  return requester(`PUT`, url, data);
 }
 
 async function del(url) {
-  return  requester(`DELETE`, url);
+  return requester(`DELETE`, url);
 }
 
 const api = {
