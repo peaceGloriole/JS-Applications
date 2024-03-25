@@ -4,11 +4,11 @@ import page from '../node_modules/page/page.mjs';
 const root = document.querySelector(`main`);
 
 function render(template) {
-  renderBase(template, root);
+    renderBase(template, root);
 }
 
 export {
-  html,
-  render,
-  page
+    html,
+    render,
+    page
 };

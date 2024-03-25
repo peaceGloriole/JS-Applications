@@ -3,43 +3,45 @@ import { clearUserData, getUserData } from '../util.js';
 const host = `http://localhost:3030`;
 
 async function request(method, url, data) {
-  const options = {
-    method,
-    headers: {},
-  };
+    const options = {
+        method,
+        headers: {},
+    };
 
-  if (data) {
-    options.headers['Content-Type'] = 'application/json';
-    options.body = JSON.stringify(data);
-  }
+    if (data) {
+    // eslint-disable-next-line quotes
+        options.headers['Content-Type'] = 'application/json';
+        options.body = JSON.stringify(data);
+    }
 
-  const userData = getUserData();
-  if (userData) {
-    options.headers['X-Authorization'] = userData.accessToken;
-  }
+    const userData = getUserData();
+    if (userData) {
+    // eslint-disable-next-line quotes
+        options.headers['X-Authorization'] = userData.accessToken;
+    }
 
-  try {
-    const response = await fetch(host + url, options);
+    try {
+        const response = await fetch(host + url, options);
     
-    if (!response.ok) {
-      if (response.status == 403) {
-        clearUserData();
-      }
+        if (!response.ok) {
+            if (response.status == 403) {
+                clearUserData();
+            }
 
-      const error = await response.json();
-      throw new Error(error.message);
+            const error = await response.json();
+            throw new Error(error.message);
+        }
+
+        if (response.status == 204) {
+            return response;
+        } else {
+            return response.json();
+        }
+
+    } catch (error) {
+        alert(error.message);
+        throw error;
     }
-
-    if (response.status == 204) {
-      return response;
-    } else {
-      return response.json();
-    }
-
-  } catch (error) {
-    alert(error.message);
-    throw error;
-  }
 
 }
 

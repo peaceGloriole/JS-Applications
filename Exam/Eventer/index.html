@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <script src="/Eventer/src/app.js" type="module"></script>
+    <title>Eventer</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <!-- Navigation -->
+        <a id="logo" href="/"
+          ><img id="logo-img" src="./images/logo.png" alt=""
+        /></a>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="initial-scale=1.0" />
-  <link rel="stylesheet" href="./styles/styles.css" />
-  <script src="/Eventer/src/app.js" type="module"></script>
-  <title>Eventer</title>
-</head>
+        <nav>
+          <div>
+            <a href="#">Events</a>
+          </div>
 
-<body>
-  <div id="wrapper">
-    <header>
-      <!-- Navigation -->
-      <a id="logo" href="/"><img id="logo-img" src="./images/logo.png" alt="" /></a>
+          <!-- Logged-in users -->
+          <div class="user">
+            <a href="#">Add Event</a>
+            <a href="#">Logout</a>
+          </div>
 
-      <nav>
-        <div>
-          <a href="#">Events</a>
-        </div>
+          <!-- Guest users -->
+          <div class="guest">
+            <a href="#">Login</a>
+            <a href="#">Register</a>
+          </div>
+        </nav>
+      </header>
 
-        <!-- Logged-in users -->
-        <div class="user">
-          <a href="#">Add Event</a>
-          <a href="#">Logout</a>
-        </div>
-
-        <!-- Guest users -->
-        <div class="guest">
-          <a href="#">Login</a>
-          <a href="#">Register</a>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      
-    </main>
-</body>
-
+      <main>
+       
+      </main>
+    </div>
+    <footer>
+      <p>@ Eventer </p>
+    </footer>
+  </body>
 </html>
