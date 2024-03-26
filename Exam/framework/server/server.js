@@ -1438,38 +1438,36 @@
     sessions: {},
   };
   var seedData = {
-    motorcycles: {
-      '1840a313-225c-416a-817a-9954d4609f7c': {
-        _ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',
-        model: 'Honda Hornet',
-        imageUrl: '/images/Honda Hornet.png',
-        year: '2006',
-        mileage: '50000' ,
-        contact: '0881234567' ,
-        about: 'The Honda Hornet 2006 is a popular naked bike renowned for its nimble handling, reliable performance, and a sleek design that appeals to urban riders and commuters alike.' ,
-        _createdOn: 1617194210928,
-      },
-      '126777f5-3277-42ad-b874-76d043b069cb': {
-        _ownerId: '847ec027-f659-4086-8032-5173e2f9c93a',
-        model: 'Kawasaki er6n',
-        imageUrl: '/images/Kawasaki er6n.png',
-        year: '2016',
-        mileage: '10000' ,
-        contact: '0884567123' ,
-        about: 'The Yamaha MT-07 2017 model is a thrilling and versatile naked motorcycle equipped with a powerful twin-cylinder engine, attractive styling, and advanced features, making it a favorite among riders seeking an exhilarating and enjoyable ride.' ,
-        _createdOn: 1617194295474,
-      },
-      '136777f5-3277-42ad-b874-76d043b069cb': {
-        _ownerId: '847ec027-f659-4086-8032-5173e2f9c93a',
-       model: 'Yamaha mt 07',
-        imageUrl: '/images/Yamaha mt 07.png',
-        year: '2017',
-        mileage: '15000' ,
-        contact: '0886714523' ,
-        about: 'The Kawasaki ER6n 2016 boasts a well-engineered package, combining a responsive parallel-twin engine, comfortable ergonomics, and a modern design, making it a capable and practical choice for both everyday riding and spirited adventures.' ,
-        _createdOn: 1617194295480,
-      },
+    events: {
+    '1840a313-225c-416a-817a-9954d4609f7c': {
+      _ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',
+      name: 'Robert De Niro Themed Party',
+        imageUrl: '/images/large_deniroparty_marquee.jpg',
+        category: 'Fun',
+        description: 'Welcome to the ultimate Robert De Niro themed party! If you\'re a fan of this legendary actor\'s films and characters, then this is the party for you.Entertainment can include a De Niro movie trivia game, a dance-off to classic songs from his films, and even an impression contest where guests can try their best De Niro impressions.End the night with a screening of one of De Niro\'s greatest films, followed by a toast to the man himself. Your guests will be talking about this unforgettable party for years to come!',
+        date: '15.04.2023 from 17:00' ,
+      _createdOn: 1617194210928,
     },
+    '126777f5-3277-42ad-b874-76d043b069cb': {
+      _ownerId: '847ec027-f659-4086-8032-5173e2f9c93a',
+        name: 'Fun Run',
+        imageUrl: '/images/pexels-run-ffwpu-2530130 (1).jpg',
+        category: 'Sport',
+        description: 'A fun run is a non-competitive running event that\'s usually designed for recreational purposes rather than for competition or achievement. Participants often dress up in fun costumes and run, walk or jog through a designated course that can range from a few hundred meters to several kilometers. The event is usually open to people of all ages and fitness levels, and is a great way to promote fitness, socialize, and raise money for charity.',
+        date: '19.04.2023 from 13:00' ,
+      _createdOn: 1617194295474,
+    },
+    '136777f5-3277-42ad-b874-76d043b069cb': {
+      _ownerId: '847ec027-f659-4086-8032-5173e2f9c93a',
+      name: 'Art & Wine',
+        imageUrl: '/images/pexels-victoria-akvarel-4873622.jpg',
+        category: 'Art',
+        description: 'An art and wine event is a social gathering that combines two enjoyable experiences: appreciating art and enjoying wine. At these events, attendees can explore different types of artwork while sipping on a selection of fine wines.',
+        date: '17.04.2023 from 18:00' ,
+      _createdOn: 1617194295480,
+    },
+  },
+    going: {},
   };
   var rules$1 = {
     users: {

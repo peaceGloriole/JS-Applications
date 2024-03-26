@@ -1,7 +1,7 @@
 {
-  "name": "samurider",
+  "name": "eventer",
   "version": "1.0.0",
-  "description": "Samurider Single Page Application",
+  "description": "Eventer Single Page Application",
   "main": "index.html",
   "scripts": {
     "test": "mocha tests",

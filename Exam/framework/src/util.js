@@ -21,17 +21,9 @@ function createSubmitHandler(callback) {
     };
 }
 
-function updateNav() {
-    const userData = getUserData();
-    
-    document.querySelector(`nav .user`).style.display = userData ? `block` : `none`;
-    document.querySelector(`nav .guest`).style.display = userData ? `none` : `block`;
-}
-
 export {
     setUserData,
     getUserData,
     clearUserData,
-    createSubmitHandler,
-    updateNav
+    createSubmitHandler
 };
