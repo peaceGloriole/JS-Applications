@@ -19,6 +19,6 @@ const eventTemplate = (event) => html`
 </div>`;
 
 export async function showCatalog(ctx) {
-    const events = await getAllEvents();
-    render(catalogTemplate(events));
+  const events = await getAllEvents();
+  render(catalogTemplate(events));
 }

@@ -1,25 +1,36 @@
-import { get, post } from "./request.js";
+import { del, get, post, put } from "./request.js";
 
 const endPoints = {
-    dashboard: `/data/motorcycles?sortBy=_createdOn%20desc`,
-    events: `/data/motorcycles`,
-    eventById: `/data/motorcycles/`,
+  dashboard: `/data/motorcycles?sortBy=_createdOn%20desc`,
+  events: `/data/motorcycles`,
+  eventById: `/data/motorcycles/`,
 };
 
 async function getEventById(id) {
-    return get(endPoints.eventById + id); 
+  return await get(endPoints.eventById + id); 
 }
 
 async function getAllEvents() {
-    return get(endPoints.dashboard);
+  return await get(endPoints.dashboard);
 }
 
 async function createNewEvents(model, imageUrl ,year ,mileage ,contact ,about) {
-    return post(endPoints.events, { model, imageUrl ,year ,mileage ,contact ,about });
+  return await post(endPoints.events, { model, imageUrl ,year ,mileage ,contact ,about });
+}
+
+async function delEvent(id) {
+  return await del(endPoints.eventById + id);
+}
+
+async function updateEvent(id, data) {
+  console.log(id, data);
+  return await put(endPoints.eventById + id, data);
 }
 
 export {
-    createNewEvents,
-    getEventById,
-    getAllEvents
+  createNewEvents,
+  getEventById,
+  getAllEvents,
+  delEvent,
+  updateEvent
 };
