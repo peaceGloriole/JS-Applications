@@ -23,8 +23,11 @@ async function delEvent(id) {
 }
 
 async function updateEvent(id, data) {
-  console.log(id, data);
   return await put(endPoints.eventById + id, data);
+}
+
+async function searchEvent(query) {
+  return await get(endPoints.events + `?where=model%20LIKE%20%22${query}%22`);
 }
 
 export {
@@ -32,5 +35,6 @@ export {
   getEventById,
   getAllEvents,
   delEvent,
-  updateEvent
+  updateEvent,
+  searchEvent
 };

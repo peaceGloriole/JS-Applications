@@ -8,6 +8,7 @@ import { showEdit } from './views/editPage.js';
 import { showHome } from './views/homePage.js';
 import { showLogin } from './views/loginPage.js';
 import { showRegister } from './views/registerPage.js';
+import { searchView } from './views/searchView.js';
 
 updateNav();
 
@@ -18,6 +19,7 @@ page(`/catalog`, showCatalog);
 page(`/create`, showCreate);
 page(`/details/:id`, showDetails);
 page(`/edit/:id`, showEdit);
+page(`/search`, searchView);
 
 page.start();
 
